@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>语雀搜索设置</title>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="panel">
+        <div class="form_box">
+          <div class="row">
+            <div class="head">语雀Token</div>
+            <div class="value">
+              <input type="text" name="token" id="token" placeholder="请输入语雀Token" />
+              <div class="tips">注意: Token 只需要授权<strong>读取你的文档</strong>即可。</div>
+              <!-- <a class="tips" href="https://www.yuque.com/settings/tokens" target="_black">前往获取 Token</a> -->
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="head"></div>
+            <div class="value">
+              <div class="tips">注意: Token 只需要授权<strong>读取你的文档</strong>即可。</div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="head">自动进入编辑页</div>
+            <div class="value">
+              <label class="switch">
+                <input type="checkbox" id="to-edit" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="head"></div>
+            <div class="value">
+              <div class="tips_panel">
+                <div class="tips_row">
+                  <span class="fs-08">Tips: </span>
+                </div>
+                <div class="tips_row">
+                  <span class="tips item">快捷键设置: </span>
+                  <span class="fs-08 item">chrome://extensions/shortcuts</span>
+                  <span class="fs-08 item">(安全原因请复制后手动打开)</span>
+                </div>
+                <div class="tips_row">
+                  <span class="tips item">获取语雀 Token: </span>
+                  <a class="fs-08 item" href="https://www.yuque.com/settings/tokens" target="_black">前往获取 Token</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="submit_box">
+          <div class="submit_btn" id="submit-btn">保存</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="powered">
+          <p class="author">Author <a href="https://twitter.com/aikuuer" target="_black">@Yezi</a></p>
+          <p class="designed">Web & Icons designed by Figma.</p>
+          <ul class="social">
+            <li>
+              <a href="https://twitter.com/aikuuer" target="_black"><img src="/static/images/Twitter.svg" alt="Twitter" srcset=""/></a>
+            </li>
+            <li>
+              <a href="https://instagram.com/liuxiaohuozi" target="_black"><img src="/static/images/Instagram.svg" alt="Instagram" srcset=""/></a>
+            </li>
+            <li>
+              <a href="https://t.me/yezige" target="_black"><img src="/static/images/Telegram.svg" alt="Telegram" srcset=""/></a>
+            </li>
+          </ul>
+        </div>
+        <nav class="other_menu">
+          <ul>
+            <li><a href="https://www.liu.app" target="_black" title="Blog">LIU</a></li>
+            <li><a href="https://cloud1-5giq10fn52e7fc0e-1307628865.tcloudbaseapp.com/jump-mp.html" target="_black" title="V2EX 小程序">V2EX Plus</a></li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=yezige.vscode-theme-green-eyecare" target="_black" title="VSCode 主题插件">Green Eyecare Theme</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <script type="module" src="init.js"></script>
+  </body>
+</html>

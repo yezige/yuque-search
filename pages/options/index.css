@@ -1,0 +1,62 @@
+@import "/static/css/switch.css";
+
+.panel {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  width: 890px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.panel .form_box{
+    min-height: 234px;
+}
+.row {
+  display: flex;
+  padding: 10px 0;
+}
+.row .head {
+  width: 120px;
+  text-align: right;
+  margin-right: 15px;
+  line-height: 1.8;
+}
+.row .value input {
+  width: 400px;
+}
+
+.submit_box {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit_box .submit_btn {
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: var(--btn-default-bg-color);
+  color: var(--btn-default-color);
+}
+.submit_btn:hover {
+  background-color: var(--btn-default-hover-bg-color);
+}
+
+.tips_panel {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tips_panel .tips_row{
+  display: flex;
+}
+
+.tips_row .item + .item{
+  margin-left: 5px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>语雀搜索</title>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="panel">
+        <div class="search">
+          <div class="search_box">
+            <input type="text" name="search" id="search" />
+            <div class="search_btn themeimg"></div>
+          </div>
+        </div>
+        <div class="error_box" id="error" style="display: none;">
+          <div class="tips error"></div>
+        </div>
+        <div class="list">
+          <!-- <a class="row active" href="https://www.yuque.com/go/doc/11618377" target="_black">
+            <div>
+              <div class="title">python注意</div>
+              <div class="summary">变量的作用域 &lt;em&gt;python&lt;/em&gt;中函数中可以取到全局变量，但函数中的变量的作用域只在函数里边，所以最后a打印的为123，并且函数内部定义的变量在函数外部是无法访问的（除非global强制声明为全局变量）。usr/bin/&lt;em&gt;python&lt;/em&gt; a='...</div>
+            </div>
+          </a> -->
+        </div>
+      </div>
+    </div>
+    <div class="mask_box" style="display: none;" id="readme">
+      <div class="mask"></div>
+      <div class="mask_panel">
+        <div class="mask_body">
+          <p class="fs-08">使用 ↑ ↓ 方向键选择</p>
+          <p class="fs-08">使用 Enter 打开文章</p>
+        </div>
+        <div class="mask_footer">
+          <div class="mask_btn">我知道了</div>
+        </div>
+      </div>
+    </div>
+    <script src="init.js" type="module"></script>
+  </body>
+</html>
