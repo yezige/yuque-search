@@ -7,7 +7,7 @@
     "service_worker": "background.js"
   },
   "options_page": "/pages/options/index.html",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage"],
   "host_permissions": [
     "https://www.yuque.com/api/"
   ],
