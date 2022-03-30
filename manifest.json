@@ -1,7 +1,7 @@
 {
   "name": "语雀搜索",
   "description": "语雀快捷搜索插件",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
