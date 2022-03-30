@@ -4,6 +4,8 @@
 
 [Chrome Web Store](https://chrome.google.com/webstore/detail/yuque-helper/lffaohdkiepcnjnnbngjbmpgegbnepgf?hl=zh-CN)
 
+如没有条件访问`Chrome Web Store`可以使用我打包好的[代码](https://github.com/yezige/yuque-search/releases/latest/download/yuque-search-release-latest.zip)，前往`chrome://extensions/`页面点击`加载已解压的扩展程序`
+
 ### 使用方法：
 
 - 右键插件 -> 选项 -> 设置`语雀 Token`

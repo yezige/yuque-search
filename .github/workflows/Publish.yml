@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "**"
+      - "!**-alpha"
+jobs:
+  build:
+    strategy:
+      matrix:
+        go-version: [1.16.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Package
+        id: package
+        run: |
+          zip -r yuque-search-release-latest.zip ./ -x "./.git/*" -x "./.github/*"
+          echo "::set-output name=filename::yuque-search-release-latest.zip"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ steps.package.outputs.filename }}
+          asset_name: ${{ steps.package.outputs.filename }}
+          asset_content_type: application/octet-stream

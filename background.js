@@ -1,6 +1,6 @@
-let color = '#3aa757'
-
+// 首次安装事件
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color })
-  console.log('Default background color set to %cgreen', `color: ${color}`)
+  chrome.runtime.openOptionsPage(() => {
+    console.log('安装后打开选项页')
+  })
 })

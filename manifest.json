@@ -8,6 +8,14 @@
   },
   "options_page": "/pages/options/index.html",
   "permissions": ["storage"],
+  "host_permissions": ["https://www.yuque.com/"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+1"
+      }
+    }
+  },
   "action": {
     "default_popup": "/pages/popup/index.html",
     "default_icon": {

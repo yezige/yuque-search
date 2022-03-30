@@ -233,4 +233,4 @@ function hideMask(e, callback) {
   el.style.display = 'none'
   callback()
 }
-export { init, request }
+export { yuque_api, init, request }
