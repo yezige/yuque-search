@@ -129,22 +129,22 @@ input {
   color: inherit;
   height: 1.8rem;
   line-height: 1.8;
-  font-size: 0.93rem;
+  font-size: 0.9rem;
 }
 
-a {
-  color: var(--link-color);
+a,
+.link_color {
+  color: var(--link-color) !important;
   text-decoration: none;
 }
 
-.fs-08{
-  font-size: .8rem;
+.fs-08 {
+  font-size: 0.8rem;
 }
 
 .tips::before {
   content: ' ';
-  background: url('/static/images/tips.svg')
-    no-repeat center center;
+  background: url('/static/images/tips.svg') no-repeat center center;
   background-size: 0.8rem;
   width: 0.8rem;
   height: 0.8rem;
