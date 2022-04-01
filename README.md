@@ -14,6 +14,12 @@
 
 > 快捷键可前往`chrome://extensions/shortcuts`手动配置
 
+### 插件截图
+
+<img src="static/images/preview3.png" height="320" alt="预览3" align=center style="display: block;" />
+<img src="static/images/preview2.png" height="320" alt="预览2" align=center style="display: block;" />
+<img src="static/images/preview1.png" height="320" alt="预览1" align=center style="display: block;" />
+
 ### 其他
 
 有问题请提 `Issues`
