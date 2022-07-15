@@ -7,6 +7,7 @@ async function search() {
   try {
     const key = document.getElementById('search')
     const listBox = document.querySelector('.list')
+    const popBox = document.querySelector('#popup')
 
     // 隐藏error内容
     hideMsg()
@@ -47,6 +48,7 @@ async function search() {
     }
     listBox.innerHTML = listHtml.join('')
     if (!options.data.readme) {
+      popBox.classList.add("min-height-230")
       showMask()
     }
   } catch (err) {

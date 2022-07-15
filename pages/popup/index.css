@@ -6,6 +6,9 @@ body {
   border-radius: 5px;
   padding: 10px 20px;
 }
+.min-height-230{
+  min-height: 230px;
+}
 .panel .error_box {
   display: flex;
   justify-content: center;
