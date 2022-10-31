@@ -6,7 +6,7 @@ body {
   border-radius: 5px;
   padding: 10px 20px;
 }
-.min-height-230{
+.min-height-230 {
   min-height: 230px;
 }
 .panel .error_box {
@@ -39,8 +39,8 @@ body {
     no-repeat center center;
   background-size: 1rem 1rem;
   background-color: inherit;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.1rem;
+  height: 2.1rem;
   cursor: pointer;
 }
 
@@ -69,7 +69,20 @@ body {
 .list .row:hover {
   background-color: var(--node-bg-color);
 }
-
+.row .row_content {
+  position: relative;
+}
+.row_content .space_info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.5rem;
+  line-height: 1;
+  background-color: var(--blockquote-bg-color);
+  color: var(--blockquote-color);
+  padding: 2px 3px;
+  border-radius: 2px;
+}
 .row .title {
   color: var(--text-high-color);
   word-wrap: break-word;

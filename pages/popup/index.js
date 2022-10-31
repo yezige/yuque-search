@@ -3,8 +3,16 @@ import { getOption, setOption } from '../options/index.js'
 const yuque_host = 'https://www.yuque.com'
 const yuque_api = `${yuque_host}/api/v2/`
 
+var _tmp_filterExist = {}
+
+function getDomain(prefix) {
+  prefix = prefix || 'www'
+  return `https://${prefix}.yuque.com/api/v2/`
+}
+
 async function search() {
   try {
+    _tmp_filterExist = {}
     const key = document.getElementById('search')
     const listBox = document.querySelector('.list')
     const popBox = document.querySelector('#popup')
@@ -27,34 +35,80 @@ async function search() {
 
     // 调用搜索请求
     const list = await request({
-      url: `${yuque_api}search?related=true&type=doc&q=${key.value}`,
+      url: `${getDomain()}search?related=true&type=doc&q=${key.value}`,
       header: [{ header: 'X-Auth-Token', value: options.data.token }]
     })
+
+    // 先清空搜索结果
+    listBox.innerHTML = ''
 
     if (!list.success) {
       return showMsg(list.msg)
     }
+    let list_data = filterExist(list.data.data)
 
+    for (let space of options.data.space) {
+      const space_list = await request({
+        url: `${getDomain(space)}search?related=true&type=doc&q=${key.value}`,
+        header: [{ header: 'X-Auth-Token', value: options.data.token }]
+      })
+      if (!list.success) {
+        continue
+      }
+      let space_data = filterExist(space_list.data.data)
+
+      if (!space_data.length) {
+        continue
+      }
+
+      // 标记文章为当前space
+      for (let index in space_data) {
+        space_data[index].space = space
+      }
+      // 把其他空间的前两条放到前边（第三条）展示，其余放到最后
+      let insert_index = list_data.length > 1 ? 2 : list_data.length
+      list_data.splice(insert_index, 0, ...space_data.slice(0, 2))
+      list_data.push(...space_data.slice(2))
+    }
+
+    if (list_data.length == 0) {
+      return showMsg('没有搜索到相关文章')
+    }
+
+    // 循环拼接html
     let listHtml = []
-    for (let i in list.data.data) {
-      const row = list.data.data[i]
+    for (let i in list_data) {
+      const row = list_data[i]
       const rowHtml = `<a class="row${i == 0 ? ' active' : ''}" href="${yuque_host + row.url + (toedit ? '/edit' : '')}" target="_black">
-        <div>
+        <div class="row_content">
           <div class="title">${row.title}</div>
           <div class="summary">${html2Escape(row.summary)}</div>
+          ${row.space ? '<span class="space_info">' + row.space + '</span>' : ''}
         </div>
       </a>`
       listHtml.push(rowHtml)
     }
     listBox.innerHTML = listHtml.join('')
     if (!options.data.readme) {
-      popBox.classList.add("min-height-230")
+      popBox.classList.add('min-height-230')
       showMask()
     }
   } catch (err) {
     console.log(err)
     return showMsg(err.msg || '请求异常')
   }
+}
+
+// 验证一下 _tmp_filterExist 中是否存在
+function filterExist(need_insert) {
+  let data = []
+  for (let item of need_insert) {
+    if (!_tmp_filterExist[item.id]) {
+      _tmp_filterExist[item.id] = item
+      data.push(item)
+    }
+  }
+  return data
 }
 
 async function request(opt) {

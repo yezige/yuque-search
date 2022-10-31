@@ -71,7 +71,7 @@ body {
     --searchbar-content-bg-color: #212121;
   }
 
-  image.themeimg,
+  img.themeimg,
   icon.themeimg,
   .themeimg,
   .tips::before {
@@ -101,6 +101,9 @@ body {
 * {
   box-sizing: border-box;
 }
+::placeholder{
+  color: var(--text-disable-color);
+}
 body {
   margin: 0;
   padding: 0;
@@ -127,7 +130,7 @@ input {
   background-color: transparent;
   font-size: inherit;
   color: inherit;
-  height: 1.8rem;
+  height: 2.1rem;
   line-height: 1.8;
   font-size: 0.9rem;
 }
@@ -160,6 +163,7 @@ a,
   font-size: 0.8rem;
   cursor: pointer;
   color: var(--text-color);
+  margin-left: 5px;
 }
 
 .tips strong {
@@ -211,4 +215,15 @@ a,
   border: 1px solid var(--box-dark-border-color);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.hover_shadow:hover {
+  box-shadow: 0 1px 6px var(--box-shadow-color);
+}
+.hover_bghigh:hover {
+  background-color: var(--menu-bg-color);
+}
+.ease_in_out {
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
 }

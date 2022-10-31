@@ -16,10 +16,16 @@
   padding: 10px 0;
 }
 .row .head {
+  display: flex;
+  align-items: center;
   width: 120px;
   text-align: right;
   margin-right: 15px;
   line-height: 1.8;
+}
+.row .value{
+  display: flex;
+  align-items: center;
 }
 .row .value input {
   width: 400px;
@@ -33,15 +39,17 @@
 }
 
 .submit_box .submit_btn {
-  cursor: pointer;
   width: 200px;
-  text-align: center;
   padding: 10px;
   border-radius: 30px;
+}
+.btn{
+  cursor: pointer;
+  text-align: center;
   background-color: var(--btn-default-bg-color);
   color: var(--btn-default-color);
 }
-.submit_btn:hover {
+.btn:hover {
   background-color: var(--btn-default-hover-bg-color);
 }
 
@@ -59,4 +67,44 @@
 
 .tips_row .item + .item{
   margin-left: 5px;
+}
+
+.space_list_box .head{
+  align-items: start;
+}
+.space_list_box .value{
+  align-items: end;
+}
+
+.space_list.noempty{
+  margin-right: 20px;
+}
+
+.space_item{
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.space_item.show{
+  opacity: 1;
+}
+.space_item + .space_item{
+  margin-top: 10px;
+}
+.space_add{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.space_btn{
+  height: 2.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.space_btn img{
+  height: 2.1rem;
+  width: 2.1rem;
+}
+.space_remove {
+  margin-left: 10px;
 }
