@@ -1,11 +1,10 @@
 import { getOption, setOption } from '../options/index.js'
 
 const yuque_host = 'https://www.yuque.com'
-const yuque_api = `${yuque_host}/api/v2/`
 
 var _tmp_filterExist = {}
 
-function getDomain(prefix) {
+function getApiHost(prefix) {
   prefix = prefix || 'www'
   return `https://${prefix}.yuque.com/api/v2/`
 }
@@ -35,7 +34,7 @@ async function search() {
 
     // 调用搜索请求
     const list = await request({
-      url: `${getDomain()}search?related=true&type=doc&q=${key.value}`,
+      url: `${getApiHost()}search?related=true&type=doc&q=${key.value}`,
       header: [{ header: 'X-Auth-Token', value: options.data.token }]
     })
 
@@ -49,7 +48,7 @@ async function search() {
 
     for (let space of options.data.space) {
       const space_list = await request({
-        url: `${getDomain(space)}search?related=true&type=doc&q=${key.value}`,
+        url: `${getApiHost(space)}search?related=true&type=doc&q=${key.value}`,
         header: [{ header: 'X-Auth-Token', value: options.data.token }]
       })
       if (!list.success) {
@@ -289,4 +288,4 @@ function hideMask(e, callback) {
   el.style.display = 'none'
   callback()
 }
-export { yuque_api, init, request }
+export { init, request }
