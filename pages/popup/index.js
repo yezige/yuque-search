@@ -219,23 +219,27 @@ function init() {
 
   // 搜索按钮事件
   const search_btn = document.querySelector('.search_btn')
-  search_btn.addEventListener('click', search)
+  if (search_btn) {
+    search_btn.addEventListener('click', search)
+  }
 
   // 搜索框事件
   const search_input = document.querySelector('#search')
   let search_input_changed = true
-  search_input.focus()
-  search_input.addEventListener('keypress', (e) => {
-    if (e.code == 'Enter') {
-      if (!search_input_changed) return
-      search()
-      search_input_changed = false
-    }
-  })
-  search_input.addEventListener('input', (e) => {
-    console.log(e.target.value)
-    search_input_changed = true
-  })
+  if (search_input) {
+    search_input.focus()
+    search_input.addEventListener('keypress', (e) => {
+      if (e.code == 'Enter') {
+        if (!search_input_changed) return
+        search()
+        search_input_changed = false
+      }
+    })
+    search_input.addEventListener('input', (e) => {
+      console.log(e.target.value)
+      search_input_changed = true
+    })
+  }
 
   // 选择文章快捷键
   document.addEventListener('keydown', (e) => {
