@@ -31,7 +31,7 @@ body {
   --box-dark-color: rgba(255, 255, 255, 0.87);
   --box-dark-shadow-color: rgba(0, 0, 0, 0.5);
   --box-dark-border-color: rgba(255, 255, 255, 0.12);
-  --mask-bg-color: #ccc;
+  --mask-bg-color: rgba(255, 255, 255, 0.9);
   --searchbar-bg-color: #ededed;
   --searchbar-content-bg-color: #fff;
 }
@@ -65,8 +65,8 @@ body {
     --box-dark-bg-color: #fff;
     --box-dark-color: #353535;
     --box-dark-shadow-color: rgba(0, 0, 0, 0.12);
-    --box-dark-border-color: rgba(0, 0, 0, 0.06);
-    --mask-bg-color: rgba(255, 255, 255, 0.42);
+    --box-dark-border-color: rgba(0, 0, 0, 0.12);
+    --mask-bg-color: rgba(0, 0, 0, 1);
     --searchbar-bg-color: #121212;
     --searchbar-content-bg-color: #212121;
   }
@@ -101,7 +101,7 @@ body {
 * {
   box-sizing: border-box;
 }
-::placeholder{
+::placeholder {
   color: var(--text-disable-color);
 }
 body {
@@ -176,7 +176,7 @@ a,
   width: 100%;
   height: 100%;
   background-color: var(--mask-bg-color);
-  opacity: 0.4;
+  opacity: 0.9;
 }
 
 .mask_box .mask_panel {
@@ -211,9 +211,9 @@ a,
 }
 
 .mask_btn {
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px solid var(--box-dark-border-color);
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
 }
 
