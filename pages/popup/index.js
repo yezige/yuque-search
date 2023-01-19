@@ -40,6 +40,8 @@ async function search() {
 
     // 先清空搜索结果
     listBox.innerHTML = ''
+    // 滚动条回顶部
+    document.querySelector('.list').scrollTop = 0
 
     if (!list.success) {
       return showMsg(list.msg)
