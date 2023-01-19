@@ -50,7 +50,10 @@ async function search() {
       const space_list = await request({
         url: `${getApiHost(space)}search?related=true&type=doc&q=${key.value}`,
         header: [{ header: 'X-Auth-Token', value: options.data.token }]
+      }).catch((err) => {
+        throw { success: false, msg: '空间「' + space + '」' + err.msg }
       })
+
       if (!list.success) {
         continue
       }
