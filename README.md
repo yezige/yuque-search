@@ -18,8 +18,8 @@
 
 ### 3️⃣ 插件截图
 
-<img src="static/images/preview3.png" height="320" alt="预览3" style="display: block;" />
 <img src="static/images/preview2.png" height="320" alt="预览2" style="display: block;" />
+<img src="static/images/preview3.png" height="320" alt="预览3" style="display: block;" />
 <img src="static/images/preview1.png" height="320" alt="预览1" style="display: block;" />
 
 ### 4️⃣ 其他
